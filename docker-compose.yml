@@ -1,0 +1,21 @@
+services:
+  mysql:
+    image: mysql:8.0.30
+    container_name: mysql-med-agenda
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: med_agenda
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql-network
+
+volumes:
+  mysql-data:
+    driver: local
+
+networks:
+  mysql-network:
+    driver: bridge
