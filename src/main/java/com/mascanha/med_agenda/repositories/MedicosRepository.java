@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface MedicosRepository extends JpaRepository<MedicosEntity, Long> {
     Optional<MedicosEntity> findByCrm(String cmg);
+
+    void deleteById(Long id);
 }

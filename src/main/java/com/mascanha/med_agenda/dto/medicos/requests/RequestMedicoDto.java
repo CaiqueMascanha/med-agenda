@@ -4,8 +4,13 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 public record RequestMedicoDto(
+        @NotBlank(message = "Nome não pode estar vazio")
         String nome,
+
+        @NotBlank(message = "Especialidade não pode estar vazia")
         String especialidade,
+
+        @NotBlank(message = "CRM não pode estár vazia")
         String crm,
         String telefone,
 
